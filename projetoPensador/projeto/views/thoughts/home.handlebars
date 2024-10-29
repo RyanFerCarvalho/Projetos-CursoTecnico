@@ -1,0 +1,48 @@
+<section class="homeHeader">
+  {{#if search}}
+    <h1>Você está buscando por: <span>{{search}}</span></h1>
+    {{#if thoughtsQty}}
+      <p>Foram encontrados <span>{{thoughtsQty}}</span> pensamentos</p>
+    {{else}}
+      <p>Nenhum pensamento encontrado com o termo</p>
+    {{/if}}
+  {{else}}
+  <h1>Conheça alguns dos nossos <span>Pensamentos</span></h1>
+  {{/if}}
+  <form action="/">
+    <input type="text" name="search" placeholder="Está buscando por algo?">
+    <input class="btn" type="submit" value="Buscar">
+  </form>
+  <div class="orderContainer">
+    <span>Ordenar por: </span>
+    <form action="/">
+      <input type="hidden" name="search" value="{{this.search}}">
+      <input type="hidden" name="order" value="new">
+      <button type="submit"><i class="bi bi-arrow-up"></i>Mais novos</button>
+    </form>
+    <form action="/">
+      <input type="hidden" name="search" value="{{this.search}}">
+      <input type="hidden" name="order" value="old">
+      <button type="submit"><i class="bi bi-arrow-down"></i>Main antigos</button>
+    </form>
+    <a href="/">Limpar</a>
+  </div>
+</section>
+<div class="thoughtsContainer">
+  {{#each thoughts}}
+  <figure>
+    {{#with this}}
+    <blockquote>"{{title}}"</blockquote>
+    <div class="thoughtInfo">
+      <figcaption>Por <span>{{User.email}}</span></figcaption>
+      <div class="thoughtInteractions" id="{{id}}">
+        <span>{{likesAmount}}</span>
+        <img class="thoughtLikeBtn" src="{{likeStatus}}" alt="">
+
+      </div>
+    </div>
+    {{/with}}
+  </figure>
+  {{/each}}
+</div>
+

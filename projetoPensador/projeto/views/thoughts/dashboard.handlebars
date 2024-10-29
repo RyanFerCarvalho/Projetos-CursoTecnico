@@ -1,0 +1,21 @@
+<div class="dashContainer">
+  <section class="dashboardTop">
+    <div class="dashTitle">
+      <div class="bar"></div>
+      <h1>Dashboard:</h1>
+    </div>
+    <a class="createBtn btn" href="/thoughts/add">Criar Pensamento</a>
+  </section>
+  <h3 class="userThoughtsTitle">Seus pensamentos:</h3>
+  {{#each thoughts}}
+  {{#with this}}
+  <div class="thought">
+    <p class="thoughtTitle">{{title}}</p>
+    <section class="buttons">
+      <a class="btn btnThought" href="/thoughts/edit/{{id}}">Editar</a>
+      <a class="btn btnThought" href="/thoughts/delete/{{id}}">Excluir</a>
+    </section>
+  </div>
+  {{/with}}
+  {{/each}}
+</div>

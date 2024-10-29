@@ -1,0 +1,14 @@
+<div class="formPageContainer">
+  <div class="formTitles">
+    <div class="bar"></div>
+    <h1>Editar Pensamento:</h1>
+  </div>
+  {{!-- <a href="/thoughts/dashboard">voltar</a> --}}
+  {{#with thought}}
+  <form class="thoughtForm" action="/thoughts/edit/{{id}}" method="post">
+    <label for="title">Título</label>
+    <input type="text" name="title" value="{{title}}">
+    <input type="submit" value="Editar Pensamento">
+  </form>
+  {{/with}}
+</div>
