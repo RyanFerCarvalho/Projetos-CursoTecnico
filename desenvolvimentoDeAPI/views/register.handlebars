@@ -1,0 +1,30 @@
+<main class="mainRegister">
+    <h1>Cadastrar livro</h1>
+    <form action="/cadastrar/insertbook" method="post">
+        <div>
+            <label for="titulo">Título do Livro:</label>
+            <input name="titulo" type="text" placeholder="Digite o nome do livro...">
+        </div>
+        <div>
+            <label for="categoria">categoria do Livro:</label>
+            <input name="categoria" type="text" placeholder="Digite a categoria do livro...">
+        </div>
+        <div>
+            <label for="descricao">Descrição do livro:</label>
+            <textarea name="descricao" id="" cols="30" rows="6" placeholder="Digite a descrição do livro..."></textarea>
+        </div>
+        <section class="numberInputs">
+            <div>
+                <label for="preco">Preço do Livro:</label>
+                <input step="any" name="preco" type="number" placeholder="50.00">
+            </div>
+            <div>
+                <label for="quantidade">Quantidade disponível:</label>
+                <input name="quantidade" type="number" placeholder="60">
+            </div>
+        </section>
+        <div>
+            <input class="submit" type="submit" value="Cadastrar">
+        </div>
+    </form>
+</main>

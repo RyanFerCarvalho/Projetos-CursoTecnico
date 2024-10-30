@@ -1,0 +1,19 @@
+<main class="mainHome">
+    {{#each livros}}
+    {{#with this}}
+        <div class="bookBox">
+            <h1>{{titulo}}</h1>
+            <p>{{descricao}}</p>
+            <article class="bookInfo">
+                <span class="category">{{categoria}}</span>
+                <span class="price">R${{preco}}</span>
+            </article>
+            <section class="buttons">
+                <a href="/livros/{{id}}" class="button detailsButton">Ver detalhes</a>
+                <a href="/atualizar/{{id}}" class="button editButton">Editar</a>
+                <a href="/deletar/{{id}}" class="button deleteButton">Excluir</a>
+            </section>
+        </div>
+    {{/with}}
+    {{/each}}
+</main>
